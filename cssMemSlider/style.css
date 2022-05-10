@@ -39,3 +39,71 @@ body {
 	font-family: Inter;
 	scroll-behavior: smooth;
 }
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	max-width: 1440px;
+	margin: 0 auto;
+	background-color: grey;
+}
+.header {
+	background-color: rgb(168, 82, 168);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header__title {
+	margin: 50px 0px;
+	font-size: 2.5rem;
+	line-height: 120%;
+	letter-spacing: normal;
+	font-weight: 700;
+}
+.main {
+	flex: 1 1 auto;
+	height: 100%;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; 
+}
+.main__screen {
+	border-radius: 5px;
+	display: flex;
+	overflow: hidden;
+}
+.main__bottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.main__controls {
+}
+.controls-main {
+}
+.controls-main__input {
+	width: 20px;
+	height: 20px;
+	background-color: #000;
+}
+.controls-main__input:hover {
+	cursor: pointer;
+}
+.main__text {
+}
+.footer {
+	background-color: rgb(168, 82, 168);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer__text {
+	margin: 50px 0px;
+	font-size: 2.5rem;
+	line-height: 120%;
+	letter-spacing: normal;
+	font-weight: 700;
+}
