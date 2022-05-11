@@ -44,50 +44,50 @@ const generalArray = [
 		"diseases": ["none"],
 		"parasites": ["none"]
 	},
-	{
-		"name": "Katrine",
-		"img": "./assets/images/pets-katrine_no_bg.webp",
-		"type": "Cat",
-		"breed": "British Shorthair",
-		"description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
-		"age": "6 months",
-		"inoculations": ["panleukopenia"],
-		"diseases": ["none"],
-		"parasites": ["none"]
-	},
-	{
-		"name": "Timmy",
-		"img": "./assets/images/pets-timmy_no-bg.webp",
-		"type": "Cat",
-		"breed": "British Shorthair",
-		"description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
-		"age": "2 years 3 months",
-		"inoculations": ["calicivirus", "viral rhinotracheitis"],
-		"diseases": ["kidney stones"],
-		"parasites": ["none"]
-	},
-	{
-		"name": "Freddie",
-		"img": "./assets/images/pets-fredie_no-bg.webp",
-		"type": "Cat",
-		"breed": "British Shorthair",
-		"description": "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
-		"age": "2 months",
-		"inoculations": ["rabies"],
-		"diseases": ["none"],
-		"parasites": ["none"]
-	},
-	{
-		"name": "Charly",
-		"img": "./assets/images/pets-charly.webp",
-		"type": "Dog",
-		"breed": "Jack Russell Terrier",
-		"description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
-		"age": "8 years",
-		"inoculations": ["bordetella bronchiseptica", "leptospirosis"],
-		"diseases": ["deafness", "blindness"],
-		"parasites": ["lice", "fleas"]
-	}
+	// {
+	// 	"name": "Katrine",
+	// 	"img": "./assets/images/pets-katrine_no_bg.webp",
+	// 	"type": "Cat",
+	// 	"breed": "British Shorthair",
+	// 	"description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
+	// 	"age": "6 months",
+	// 	"inoculations": ["panleukopenia"],
+	// 	"diseases": ["none"],
+	// 	"parasites": ["none"]
+	// },
+	// {
+	// 	"name": "Timmy",
+	// 	"img": "./assets/images/pets-timmy_no-bg.webp",
+	// 	"type": "Cat",
+	// 	"breed": "British Shorthair",
+	// 	"description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
+	// 	"age": "2 years 3 months",
+	// 	"inoculations": ["calicivirus", "viral rhinotracheitis"],
+	// 	"diseases": ["kidney stones"],
+	// 	"parasites": ["none"]
+	// },
+	// {
+	// 	"name": "Freddie",
+	// 	"img": "./assets/images/pets-fredie_no-bg.webp",
+	// 	"type": "Cat",
+	// 	"breed": "British Shorthair",
+	// 	"description": "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
+	// 	"age": "2 months",
+	// 	"inoculations": ["rabies"],
+	// 	"diseases": ["none"],
+	// 	"parasites": ["none"]
+	// },
+	// {
+	// 	"name": "Charly",
+	// 	"img": "./assets/images/pets-charly.webp",
+	// 	"type": "Dog",
+	// 	"breed": "Jack Russell Terrier",
+	// 	"description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
+	// 	"age": "8 years",
+	// 	"inoculations": ["bordetella bronchiseptica", "leptospirosis"],
+	// 	"diseases": ["deafness", "blindness"],
+	// 	"parasites": ["lice", "fleas"]
+	// }
 ];
 const screen = document.querySelector('.main__screen');
 const text = document.querySelector('.main__text');
@@ -99,8 +99,24 @@ function createImages() {
 		let image = document.createElement('img');
 		image.src = `${generalArray[i]["img"]}`;
 		image.value = `${generalArray[i]["breed"]}`;
+		image.classList.add('image');
 		images.push(image);
 	}
 }
-createImages()
-console.log(images[0].value)
+createImages();
+function addImages() {
+	images.forEach(element => {
+		screen.append(element)
+	});
+}
+addImages();
+
+function moveRight() {
+	images.forEach(element => {
+		element.classList.add('image--move-right');
+	})
+}
+
+controls.forEach(element => {
+	element.addEventListener('click', moveRight);
+});

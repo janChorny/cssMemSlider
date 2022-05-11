@@ -69,11 +69,26 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between; 
+	display: flex;
+	flex-direction: column;
 }
 .main__screen {
+	flex: 1 1 auto;
 	border-radius: 5px;
 	display: flex;
 	overflow: hidden;
+}
+.image{
+	width: 500px;
+	height: 500px;
+	margin: 0px 841px 0px 0px;
+	transition: 0.3s;
+}
+.image--move-right{
+	transform: translateX(-841px);
+}
+.image--move-left{
+	transform: translateX(841px);
 }
 .main__bottom{
 	display: flex;
