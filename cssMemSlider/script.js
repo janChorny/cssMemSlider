@@ -90,6 +90,7 @@ const generalArray = [
 	// }
 ];
 const screen = document.querySelector('.main__screen');
+const slider = document.querySelector('.slider');
 const text = document.querySelector('.main__text');
 const controls = document.querySelectorAll('.controls-main__input');
 let images = [];
@@ -106,17 +107,34 @@ function createImages() {
 createImages();
 function addImages() {
 	images.forEach(element => {
-		screen.append(element)
+		slider.append(element)
 	});
 }
 addImages();
 
 function moveRight() {
-	images.forEach(element => {
-		element.classList.add('image--move-right');
-	})
+	slider.classList.add('transition-right');
+	controls[0].removeEventListener('click', moveRight);
+	controls[1].removeEventListener('click', moveLeft);
+
+}
+function moveLeft() {
+	slider.classList.add('transition-left');
+	controls[0].removeEventListener('click', moveRight);
+	controls[1].removeEventListener('click', moveLeft);
 }
 
-controls.forEach(element => {
-	element.addEventListener('click', moveRight);
+controls[0].addEventListener('click', moveRight);
+controls[1].addEventListener('click', moveLeft);
+
+slider.addEventListener("animationend", (animationEvent) => {
+	if (animationEvent.animationName === 'move-right'){
+		slider.classList.remove('transition-right');
+		// const rightItems = document.querySelector('.slider').innerHTML;
+		// document.querySelector('.slider--active').innerHTML = rightItems;
+	} else {
+		slider.classList.remove('transition-left');
+		}
+	controls[0].addEventListener('click', moveRight);
+	controls[1].addEventListener('click', moveLeft);
 });

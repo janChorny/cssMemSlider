@@ -78,18 +78,34 @@ body {
 	display: flex;
 	overflow: hidden;
 }
+.slider{
+	position: relative;
+	display: flex;
+	gap: 841px;
+	transition: 0.3s;
+}
+@keyframes move-right {
+	from{left: 0px;}
+	to{left:-841px;}
+}
+.transition-right{
+	animation-name: move-right;
+	animation-duration: 5s;
+}
+@keyframes move-left {
+	from{left: 0px;}
+	to{left:841px;}
+}
+.transition-left{
+	animation-name: move-left;
+	animation-duration: 5s;
+}
+
 .image{
 	width: 500px;
 	height: 500px;
-	margin: 0px 841px 0px 0px;
-	transition: 0.3s;
 }
-.image--move-right{
-	transform: translateX(-841px);
-}
-.image--move-left{
-	transform: translateX(841px);
-}
+
 .main__bottom{
 	display: flex;
 	justify-content: space-between;
