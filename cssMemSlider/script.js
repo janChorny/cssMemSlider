@@ -91,26 +91,28 @@ const generalArray = [
 ];
 const screen = document.querySelector('.main__screen');
 const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slider__item');
 const text = document.querySelector('.main__text');
 const controls = document.querySelectorAll('.controls-main__input');
-let images = [];
+// let images = [];
 
-function createImages() {
-	for (let i = 0; i < generalArray.length; i++){
-		let image = document.createElement('img');
-		image.src = `${generalArray[i]["img"]}`;
-		image.value = `${generalArray[i]["breed"]}`;
-		image.classList.add('image');
-		images.push(image);
-	}
-}
-createImages();
-function addImages() {
-	images.forEach(element => {
-		slider.append(element)
-	});
-}
-addImages();
+// function createImages() {
+// 	for (let i = 0; i < generalArray.length; i++){
+// 		let image = document.createElement('img');
+// 		image.src = `${generalArray[i]["img"]}`;
+// 		image.value = `${generalArray[i]["breed"]}`;
+// 		image.classList.add('image');
+// 		images.push(image);
+// 	}
+// }
+// createImages();
+
+// function addImages() {
+// 	images.forEach(element => {
+// 		slider.append(element)
+// 	});
+// }
+// addImages();
 
 function moveRight() {
 	slider.classList.add('transition-right');
@@ -130,11 +132,14 @@ controls[1].addEventListener('click', moveLeft);
 slider.addEventListener("animationend", (animationEvent) => {
 	if (animationEvent.animationName === 'move-right'){
 		slider.classList.remove('transition-right');
-		// const rightItems = document.querySelector('.slider').innerHTML;
-		// document.querySelector('.slider--active').innerHTML = rightItems;
+		const rightItem = slides[0].innerHTML;
+		document.querySelector('.slider__item--active').innerHTML = rightItem;
 	} else {
 		slider.classList.remove('transition-left');
+		const leftItem = slides[2].innerHTML;
+		document.querySelector('.slider__item--active').innerHTML = leftItem;
 		}
 	controls[0].addEventListener('click', moveRight);
 	controls[1].addEventListener('click', moveLeft);
 });
+
