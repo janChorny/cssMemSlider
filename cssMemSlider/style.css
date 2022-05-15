@@ -77,36 +77,42 @@ body {
 	border-radius: 5px;
 	display: flex;
 	overflow: hidden;
+	justify-content: center;
 }
 .slider{
 	position: relative;
-	left:-950px;
 	display: flex;
-	padding-left: 450px; */
-
+	width: 100%; 
+	height: auto;
+	align-items: center;
 	transition: 0.3s;
+	justify-content: center;
+	gap: 1300px;
 }
 @keyframes move-right {
-	from{left: -950px;}
-	to{left:0px;}
+	from{left: 0px;}
+	to{left:950px;}
 }
 .transition-right{
 	animation-name: move-right;
-	animation-duration: 5s;
+	animation-duration: 2s;
 }
 @keyframes move-left {
-	from{left: -950px;}
-	to{left:-1900px;}
+	from{left: 0px;}
+	to{left:-1020px;}
 }
 .transition-left{
 	animation-name: move-left;
-	animation-duration: 5s;
+	animation-duration: 2s;
 }
-
+.slider__item{
+	position: relative;
+	width: 700px;
+	height: 700px;
+}
 .image{
-	width: 500px;
-	height: 500px;
-	margin-right:450px;
+	width: 700px;
+	height: 700px;
 }
 
 .main__bottom{
@@ -127,6 +133,19 @@ body {
 	cursor: pointer;
 }
 .main__text {
+	position: relative;
+	font-size: 3rem;
+}
+@keyframes move-text-left {
+	from{left: 250px;}
+	to{left:0px;}
+}
+.transition-text-left{
+	animation-name: move-text-left;
+	animation-duration: 2s;
+}
+.main__text--right{
+	transform: translateX();
 }
 .footer {
 	background-color: rgb(168, 82, 168);
