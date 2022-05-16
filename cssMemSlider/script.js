@@ -14,14 +14,12 @@ function moveLeft() {
  }
 
 controls.forEach((el) => el.addEventListener('mouseover', ()=>{
-	// el.firstChild.classList.add('hover');
-	console.log(el.firstChild);
+	el.children[0].classList.add('hover');
 }));
 
 controls.forEach((el) => el.addEventListener('mouseout', () => {
-	// el.firstChild.classList.remove('hover');
+	el.children[0].classList.remove('hover');
 }));
-
 
 controls[0].addEventListener('click', () => {
 	controlsInner[0].classList.add('active');

@@ -128,13 +128,12 @@ body {
 	.main__bottom{
 	flex-direction: column-reverse;
 	gap: 30px;
-}
+	}
 } 
 .main__controls {
 	display: flex;
 }
 .main__controls-item{
-	/* padding: 0.3125rem; */
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
@@ -149,31 +148,17 @@ body {
 	border-radius: 50%;
 	background-color: rgb(94, 12, 94);
 }
-.main__controls-inner:hover{
-	background-color: #fff;
-}
 .main__controls-inner.hover{
 	background-color: #fff;
-}
-.main__controls-inner:active{
-	background-color: transparent;
-	outline: 0.125rem solid rgb(94, 12, 94);
 }
 .main__controls-inner.active{
 	background-color: transparent;
 	outline: 0.125rem solid rgb(94, 12, 94);
 }
-
-/* .controls-main {
+.main__controls-inner.active.hover{
+	background-color: #fff;
+	outline: 0.125rem solid rgb(94, 12, 94);
 }
-.controls-main__input {
-	width: 1.5rem;
-	height: 1.5rem;
-	background-color: #000;
-}
-.controls-main__input:hover {
-	cursor: pointer;
-} */
 .main__text {
 	position: relative;
 	font-size: 2rem;
